@@ -28,7 +28,7 @@ Unfortunatelly, the rest of the two font sets are not open source, Corvinus Univ
 Do not hesitate to contact with the graphic designer of the university, she will send you the font sets. 
 Install the fonts on your operating system locally. It is compeletely independent of the TeX distribution. 
 If the operating system is able to see these fonts, for example if an ordinary word processor recognizes these two fonts, 
-then almost surely `lualatex` and `xelatex` will also find these fonts. :)
+then almost surely `lualatex` and `xelatex` will also find these fonts. 😊
 
 Discuss with the log file again. If the sentence *'Corvinus recommended fonts TT Nooks and Calluna work properly!'* is found, then you have finished the font installation.
 
