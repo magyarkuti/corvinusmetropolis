@@ -1,14 +1,14 @@
 \documentclass[aspectratio=169,notheorems]{corvinusmetropolis}
 
 \newtheorem{theorem}{Theorem}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{lemma}[theorem]{Lemma}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
-\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}[theorem]{Example}
 
-\title[Quadratic forms]{Quadratic forms}
+\title{Quadratic forms}
 \subtitle{The Gauss--Jordan elimination completes the square}
 \author[Magyarkuti]{Gyula~Magyarkuti}
 \email{magyarkuti@uni-corvinus.hu}
@@ -16,9 +16,8 @@
 \institute[Corvinus University]
   {
   Department of Mathematics\\
-  Corvinus University of Budapest \\
-  Email: 
-  \putemail\\
+  Corvinus University of Budapest\\
+  Email: \putemail\\
   Download from:
   \url{http://web.uni-corvinus.hu/magyarkuti/\jobname .pdf}
   }
@@ -30,11 +29,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\lin}{\operatorname{lin}}
 \begin{document}
-\metroset{outer/numbering=none, outer/progressbar=foot}
-\frame{\titlepage}
-\frame{\frametitle{Outline}\tableofcontents}
-\metroset{outer/numbering=counter,block=transparent}
-
+\openingframes{Outline}
 \section{Definition of quadratic forms}
 \frame{
 A quadratic form is a special multi-variable function.
@@ -76,7 +71,7 @@ Compute the case when $n=3$.
 \end{frame}
 \section{Dyadic decomposition}
 \subsection{Dyad and completing the square}
-\begin{frame}{Symmetric dyad}
+\begin{frame}
     The dyad is a special symmetric matrix representing the perfect squares.
     \begin{definition}
         A symmetric matrix $A\in\mathbb{R}^{n\times n}$ is called \alert{\emph{dyad}}, 
@@ -123,7 +118,7 @@ Compute the case when $n=3$.
 \end{frame}
 \subsection{Professional method}
 \begin{frame}
-    \frametitle{Dyadic decomposition with basis transformation}
+    \frametitle{Dyadic decomposition using Gauss--Jordan elimination}
     Every $n$-variable quadratic form can be decreased by a multiply of a dyad such that
     the remainder quadratic form has one variable less:
     \metroset{block=fill}
@@ -187,12 +182,12 @@ Compute the case when $n=3$.
 \section{Definiteness of a quadratic form}
 \begin{frame}
     \frametitle{Definiteness}
-    We are going to classify the quadratic forms with respect to to their range:
+    Classify a quadratic form with respect to to the range!
     \begin{definition}
         Let $Q:\mathbb{R}^n\to\mathbb{R}$ be a nonzero quadratic form. It is called
         \begin{description}
             \item[positive definite,] if $Q\left( x \right)>0$ for every $x\in\mathbb{R}^n,x\neq 0$;
-            \item[positive semidefinite,] if $ Q\left( x \right)\geq 0$ for every $x\in\mathbb{R}^n$, 
+            \item[positive semidefinite,] if $ Q\left( x \right)\geq 0$ for every $x\in\mathbb{R}^n$,
                 but there exists a $z\in\mathbb{R}^n$ such that $Q\left( z \right)=0$;
             \item[negative definite,] if $ Q\left( x \right)<0$ for every $x\in\mathbb{R}^n,x\neq 0;$
             \item[negative semidefinite,] if $ Q\left( x \right)\leq 0$ for every $x\in\mathbb{R}^n$,
