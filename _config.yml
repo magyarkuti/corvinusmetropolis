@@ -1,5 +1,5 @@
 title: corvinusmetropolis class
 logo: hollo.png
-description: Extension of metropolis theme of beamer of LaTeX
+description: An extension of metropolis theme for the beamer package of LaTeX
 show_downloads: true
 theme: jekyll-theme-minimal
