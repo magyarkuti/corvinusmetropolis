@@ -1,9 +1,11 @@
-# Install the beamer style corvinusmetropolis
-which is a an extension of theme **metropolis** for the package **beamer** of **LaTeX**.
+An extension of t**metropolis** theme for the **beamer** package of **LaTeX**.
+
+
+## Install the beamer style corvinusmetropolis 
 
 If you are familiar with LaTeX the two cornerstones of the installation are the fonts and the logos only.
 Otherwise, install tex with beamer having metropolis theme. If you have any problem with metropolis theme go to 
-https://www.tug.org/texlive//Contents/live/texmf-dist/doc/latex/beamertheme-metropolis/metropolistheme.pdf  
+<https://www.tug.org/texlive//Contents/live/texmf-dist/doc/latex/beamertheme-metropolis/metropolistheme.pdf>
 
 ### Required fonts
   1. Fira Sans
@@ -17,7 +19,7 @@ or
 xelatex template.tex
 ````
 Open the `template.log` and search for the sentence *'Could not find Fira'*. If you found it, it means your Fira Sans font set is not yet installed.
-Try to install the missing Fira Sans font set using your tex distribution. See: https://tug.org/FontCatalogue/firasans/
+Try to install the missing Fira Sans font set using your tex distribution. See: <https://tug.org/FontCatalogue/firasans/>
 
 If you decide not to install fonts or even more you compile with `pdflatex`, then it is also ok, although this is what I strongly do not recommend for you to do.
 At this case the beamer default font set is used, which is not bad at all, but it does not fit with the Corvinus requests.
@@ -32,7 +34,7 @@ Discuss with the log file again. If the sentence *'Corvinus recommended fonts TT
 
 ### Logos
 The logos are designed by the graphical designer group of the university. You can download the logo you need from
-https://www.uni-corvinus.hu/ona/arculati-elemek/
+<https://www.uni-corvinus.hu/ona/arculati-elemek/>
 Practically you need two logos. 
   1. One for the closing frames 
 which is `corvinus_egyszerusitett_logo_cmyk.eps`
@@ -50,7 +52,7 @@ iconv -f ISO-8859-2 -t utf-8 mytexinput.tex
 ```
 converts your input file to `utf-8` format.
 For better understanding please read the first three pages of the document
-http://dante.ctan.org/tex-archive/info/luatex/lualatex-doc/lualatex-doc.pdf
+<http://dante.ctan.org/tex-archive/info/luatex/lualatex-doc/lualatex-doc.pdf>
 Not more, but only the first three pages. Do not use the font selection command `\setsansfont` in your source code. This what `corvinusmetropolis.cls` does.
 
 Have fun and enjoy!
