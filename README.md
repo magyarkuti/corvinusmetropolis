@@ -1,4 +1,4 @@
-An extension of t**metropolis** theme for the **beamer** package of **LaTeX**.
+An extension of **metropolis** theme for the **beamer** package of **LaTeX**.
 
 
 ## Install the beamer style corvinusmetropolis 
