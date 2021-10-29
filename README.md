@@ -53,6 +53,6 @@ iconv -f ISO-8859-2 -t utf-8 mytexinput.tex
 converts your input file to `utf-8` format.
 For better understanding please read the first three pages of the document
 <http://dante.ctan.org/tex-archive/info/luatex/lualatex-doc/lualatex-doc.pdf>
-Not more, but only the first three pages. Do not use the font selection command `\setsansfont` in your source code. This what `corvinusmetropolis.cls` does.
+Not more, but only the first three pages. Do not use the font selection command `\setsansfont` in your source code. This is what `corvinusmetropolis.cls` does.
 
-Have fun and enjoy!
+Have fun, enjoy!
