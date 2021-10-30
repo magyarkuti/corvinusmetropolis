@@ -44,8 +44,8 @@ Find the appropriate logos and place them to your working folder. Do not forget 
 
 Compile `template.tex` again with `lualatex` or `xelatex` and compare with `template.pdf` what I uploaded. If you have used `lualatex` or `xelatex` compilers earlier, then no reason to read the rest of this document. Enjoy!
 
-If you have never used `lualatex` and `xelatex`, then with very high propability your tex source is not using `utf-8` encoding. That soon becomes a serious problem. The point is that the required input encoding of the latex source is `utf-8` when `lualatex` or `xelatex` compiles the source code. Thus, set your text editor to `utf-8` encoding. If you want to use an older file you should convert your tex source to an `utf-8` encodig text file first.
-For example, if you use a good, old fashioned Central European encoding, as an uncomfortable hereditary of an exotic operating system of the last century, your source file is probably using `ISO-8859-2` encoding.
+If you have never used `lualatex` and `xelatex`, then probably your latex source file is encoded something different than `utf-8`. That soon becomes a serious problem. The point is that the required input encoding of the latex source is `utf-8` when `lualatex` or `xelatex` compiles the source code. Thus, set your text editor to `utf-8` encoding. Using an older file you should convert your tex source to an `utf-8` encoded text file first.
+For example, if you use the good, old fashioned Central European encoding, as an uncomfortable hereditary of an exotic operating system of the last century, your source file is probably encoded `ISO-8859-2`.
 At this case the command
 ```
 iconv -f ISO-8859-2 -t utf-8 mytexinput.tex
