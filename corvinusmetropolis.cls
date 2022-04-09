@@ -32,7 +32,7 @@
         \ClassInfo{corvinusmetropolis}{Corvinus recommended fonts TT Nooks and Calluna work properly even if Overleaf is used!}%
         }
         {
-        \ClassInfo{corvinusmetropolis}{Assume it is not Overleaf! I am turning to the system fonts.}%
+        \ClassInfo{corvinusmetropolis}{Assume it is not Overleaf! Turning to  system fonts.}%
         \iffontsavailable{TT Nooks, Calluna}
             {%
             \setsansfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}%
@@ -74,6 +74,19 @@
 \newcommand{\myinstlogo}{corvinus_Institute_of_Economics_logo_cmyk.eps}
 
 \endinput
-Last Modified: Sat 09 Apr 2022 10:25:55 AM CEST CEST CEST CEST 
-Created: Tue 26 Oct 2021 08:10:34 am CEST
+For Overleaf users!
+Upload the Corvinus recommended fonts to Overleaf and Overleaf manages the font installation.
+The required font files are as follows:
 
+Calluna_Bold_Italic.otf
+Calluna_Bold.otf
+Calluna_Heavy.otf
+Calluna_Italic.otf
+Calluna_Light.otf
+Calluna_Regular.otf
+Calluna_Semi_Bold_Italic.otf
+Calluna_Semi_Bold.otf
+TT_Nooks_Bold.otf
+TT_Nooks_Heavy.otf
+TT_Nooks_Light.otf
+TT_Nooks_Regular.otf
