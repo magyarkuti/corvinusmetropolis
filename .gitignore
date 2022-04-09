@@ -239,4 +239,7 @@ TSWLatexianTemp*
 *.sta
 
 # generated if using elsarticle.cls
+#
 *.spl
+# vim backup files
+*~

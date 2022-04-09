@@ -8,7 +8,7 @@
     \ClassInfo{corvinusmetropolis}{Use all of beamer options.\MessageBreak
     LaTeX package corvinusmetropolis is loaded}
 \else
-    \ClassError{corvinusmetropolis}{Optimal usage: lualatex <filename>\MessageBreak
+    \ClassError{corvinusmetropolis}{Usage: lualatex <filename>\MessageBreak
                      pdflatex also works but does not use Corvinus fonts}
 \fi
 %
@@ -26,13 +26,22 @@
 \usetheme[outer/progressbar=foot, titleformat=smallcaps, subsectionpage=progressbar, block=fill]{metropolis}
 \ifboolexpr{bool {xetex} or bool {luatex}}%
     {%
-    \iffontsavailable{TT Nooks-Regular, Calluna-It, Calluna-Regular}
+    \iffontsavailable{TT_Nooks_Regular, Calluna_Italic, Calluna_Regular}
         {%
-        \setsansfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}%
-        \ClassInfo{corvinusmetropolis}{Corvinus recommended fonts TT Nooks and Calluna work properly!}%
+        \setsansfont[BoldFont={TT_Nooks_Regular},ItalicFont={Calluna_Italic}]{Calluna_Regular}%
+        \ClassInfo{corvinusmetropolis}{Corvinus recommended fonts TT Nooks and Calluna work properly even if Overleaf is used!}%
         }
-        {\ClassInfo{corvinusmetropolis}{At least one of Corvinus recommended fonts is missing. \MessageBreak
-            Install the fonts TT Nooks and Calluna!}}
+        {
+        \ClassInfo{corvinusmetropolis}{Assume it is not Overleaf! I am turning to the system fonts.}%
+        \iffontsavailable{TT Nooks, Calluna}
+            {%
+            \setsansfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}%
+            \ClassInfo{corvinusmetropolis}{Corvinus recommended fonts TT Nooks and Calluna work properly!}%
+            }
+            {\ClassInfo{corvinusmetropolis}{At least one of Corvinus recommended fonts is missing. \MessageBreak
+            Upload the fonts TT Nooks and Calluna to Overleaf, or install these fonts locally!}
+            }
+        }
     }%
     {
         \ClassInfo{corvinusmetropolis}{You need to compile XeLaTeX os LuaLatex to use the Corvinus recommended fonts TT Nooks and Calluna}
@@ -62,7 +71,9 @@
     \tableofcontents}
     \metroset{outer/numbering=counter, outer/progressbar=foot, block=transparent}%
 }
+\newcommand{\myinstlogo}{corvinus_Institute_of_Economics_logo_cmyk.eps}
+
 \endinput
-Last Modified: Tue 26 Oct 2021 03:55:30 pm CEST CEST CEST 
+Last Modified: Sat 09 Apr 2022 10:25:55 AM CEST CEST CEST CEST 
 Created: Tue 26 Oct 2021 08:10:34 am CEST
 
