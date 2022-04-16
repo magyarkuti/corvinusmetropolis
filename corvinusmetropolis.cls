@@ -1,27 +1,28 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{corvinusmetropolis}[2021/10/26 corvinusmetropolis v0.1]
+\ProvidesClass{corvinusmetropolis}[2022/04/15 corvinusmetropolis v0.2]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{beamer}}
 \ProcessOptions
 \LoadClass{beamer}
 %
-\ifpdf
+\synctex=1
+%
+\ifboolexpr{bool {xetex} or bool {luatex}}{
     \ClassInfo{corvinusmetropolis}{Use all of beamer options.\MessageBreak
     LaTeX package corvinusmetropolis is loaded}
-\else
-    \ClassError{corvinusmetropolis}{Usage: lualatex <filename>\MessageBreak
-                     pdflatex also works but does not use Corvinus fonts}
-\fi
+    \RequirePackage{fontspec}%The package fontspec is also loaded by metropolis.sty but I do not need the option no-math.
+    }{
+    \ifpdf 
+        \ClassInfo{corvinusmetropolis}{Wrong tex engine. Usage: lualatex <filename> or xelatex <filename>\MessageBreak
+                     pdflatex also works but does not use Corvinus fonts.}
+    \else
+        \ClassError{corvinusmetropolis}{Wrong tex engine}{Usage: lualatex <filename> or xelatex <filename>\MessageBreak
+                     pdflatex also works but does not use Corvinus fonts.}
+    \fi
+    }
 %
 \newcommand{\@email}{}
 \newcommand{\email}[1]{\renewcommand{\@email}{#1}}
 \newcommand{\putemail}{\url{\@email}}
-%
-\synctex=1
-%
-\RequirePackage{graphicx,iftex}
-\ifboolexpr{bool {xetex} or bool {luatex}}{
-    \RequirePackage{fontspec}%The package fontspec is also loaded by metropolis.sty but I do not need the option no-math.
-}{\ClassInfo{corvinusmetropolis}{The recommended tex compiler is lualatex or xelatex.}}
 %
 \usetheme[outer/progressbar=foot, titleformat=smallcaps, subsectionpage=progressbar, block=fill]{metropolis}
 \ifboolexpr{bool {xetex} or bool {luatex}}%
