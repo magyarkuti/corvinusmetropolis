@@ -4,6 +4,7 @@
 \ProcessOptions
 \LoadClass{beamer}
 %
+\RequirePackage{orcidlink}
 \synctex=1
 %
 \ifboolexpr{bool {xetex} or bool {luatex}}{
@@ -52,7 +53,10 @@
 \definecolor{CorvinusBlue}{HTML}{1B213E}
 \setbeamercolor{normal text}{fg=CorvinusBlue}
 \setbeamercolor{alerted text}{fg=CorvinusGold, bg=CorvinusBlue}
-%
+\colorlet{VarCorvinusGold}{CorvinusGold}
+\colorlet{VarCorvinusBlue}{CorvinusBlue}
+% Thes two color variables defined for the user.
+
 \setbeamertemplate{blocks}[rounded]
 %
 \newcommand{\thankyoupage}[1]{
@@ -75,6 +79,7 @@
 \newcommand{\myinstlogo}{corvinus_Institute_of_Economics_logo_cmyk.eps}
 
 \endinput
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 For Overleaf users!
 Upload the Corvinus recommended fonts to Overleaf and Overleaf manages the font installation.
 The required font files are as follows:
