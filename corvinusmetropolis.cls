@@ -55,7 +55,7 @@
 \setbeamercolor{alerted text}{fg=CorvinusGold, bg=CorvinusBlue}
 \colorlet{VarCorvinusGold}{CorvinusGold}
 \colorlet{VarCorvinusBlue}{CorvinusBlue}
-% Thes two color variables defined for the user.
+% These two color variables defined for the user.
 
 \setbeamertemplate{blocks}[rounded]
 %
@@ -96,3 +96,5 @@ TT_Nooks_Bold.otf
 TT_Nooks_Heavy.otf
 TT_Nooks_Light.otf
 TT_Nooks_Regular.otf
+
+If you need these files send an email to me, I share an Overleaf link where you can find corvinusmetropolis installed.
