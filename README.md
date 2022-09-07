@@ -40,7 +40,8 @@ Practically you need two logos.
 which is `corvinus_egyszerusitett_logo_cmyk.eps`
   1. An other one for the title page 
 which depends on your department or institute. 
-Find the appropriate logos and place them to your working folder. Do not forget to adjust the exact filename at the command `\titlegraphic{\hfill{\includegraphics[width=.2\textwidth]{corvinus_Department_of_Mathematics_logo_cmyk.eps}}}`
+Find the appropriate logos and place them to your working folder. Do not forget to adjust the exact filename at the command 
+`\renewcommand{\myinstlogo}{corvinus_Institute_of_Data_Analytics_and_Information_Systems_cmyk.eps}`, for exmaple.
 
 Compile `template.tex` again with `lualatex` or `xelatex` and compare with `template.pdf` what I uploaded. If you have used `lualatex` or `xelatex` compilers earlier, then no reason to read the rest of this document. Enjoy!
 
@@ -52,7 +53,7 @@ iconv -f ISO-8859-2 -t utf-8 mytexinput.tex
 ```
 converts your input file to `utf-8` format.
 For better understanding please read the first three pages of the document
-<http://dante.ctan.org/tex-archive/info/luatex/lualatex-doc/lualatex-doc.pdf>
-Not more, but only the first three pages. Do not use the font selection command `\setsansfont` in your source code. This is what `corvinusmetropolis.cls` does.
+<http://dante.ctan.org/tex-archive/info/luatex/lualatex-doc/lualatex-doc.pdf>.
+No more, but only the first three pages. Do not use the font selection command `\setsansfont` in your source code. This is what `corvinusmetropolis.cls` does.
 
 Have fun, enjoy!
