@@ -1,7 +1,9 @@
 An extension of the **Metropolis** theme for the **beamer** package in **LaTeX**.
 
+## For Overleaf users
+<https://www.overleaf.com/read/zvyszxmcxrpp#e70d65>
 
-## Install the beamer style corvinusmetropolis 
+## Install locallay the beamer style corvinusmetropolis 
 
 If you are familiar with LaTeX, the two main components for installation are the fonts and the logos. Otherwise, install TeX with the beamer package and the Metropolis theme. If you encounter any problems with the Metropolis theme, refer to 
 <https://www.tug.org/texlive//Contents/live/texmf-dist/doc/latex/beamertheme-metropolis/metropolistheme.pdf>
