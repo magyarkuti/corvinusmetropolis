@@ -23,7 +23,7 @@ Install the missing Fira Sans font set using your TeX distribution. Refer to: <h
 If you choose not to install the fonts, or you compile with `pdflatex`, this is acceptabe, although this is strongly discouraged.
 At this case the beamer default font set is used, which is not bad at all, but it does not fit with the Corvinus requests.
 
-Unfortunatelly, the other two two font sets are not open source; Corvinus University of Budapest has purchased these fonts for you. 
+Unfortunatelly, the other two font sets are not open source; Corvinus University of Budapest has purchased these fonts for you. 
 Do not hesitate to contact the university's graphic designer, who can provide you the font sets.
 Install the fonts locally on your operating system. Font installation is completely independent of the TeX distribution. 
 If the operating system detects these fonts---for example, if they are available to word processors---they will almost certainly be recognized by `lualatex` and `xelatex` as well. 😊
