@@ -13,17 +13,17 @@ If you are familiar with LaTeX, the two main components for installation are the
   1. Calluna
   1. TT Nooks
 
-At this stage it is recommended to verify whether Fira Sans is installed. Compile the file `template.tex` from the command line using
+At this stage, it is recommended to verify whether Fira Sans is installed. Compile the file `template.tex` from the command line using
 ```
 lualatex template.tex 
 or
 xelatex template.tex
 ````
-Open the `template.log` and look for the message *'Could not find Fira'*. If you find this message, it means your Fira Sans font set is not yet installed.
+Open `template.log` and look for the message *'Could not find Fira'*. If you find this message, it means your Fira Sans font set is not yet installed.
 Install the missing Fira Sans font set using your TeX distribution. Refer to: <https://tug.org/FontCatalogue/firasans/>
 
-If you choose not to install the fonts, or you compile with `pdflatex`, this is acceptable, although this is strongly discouraged.
-At this case the beamer default font set is used, which is not bad at all, but it does not fit with the Corvinus requests.
+If you choose not to install the fonts, or you compile with `pdflatex`, this is acceptable, although strongly discouraged.
+At this case the beamer default font set is used. This is not bad, but it does not comply with the Corvinus requirenments.
 
 Unfortunately, the other two font sets are not open source; Corvinus University of Budapest has purchased these fonts for you. 
 Do not hesitate to contact the university's graphic designer, who can provide you the font sets.
