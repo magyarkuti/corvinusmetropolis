@@ -1,10 +1,9 @@
-An extension of **metropolis** theme for the **beamer** package of **LaTeX**.
+An extension of the **Metropolis** theme for the **beamer** package in **LaTeX**.
 
 
 ## Install the beamer style corvinusmetropolis 
 
-If you are familiar with LaTeX the two cornerstones of the installation are the fonts and the logos only.
-Otherwise, install tex with beamer having metropolis theme. If you have any problem with metropolis theme go to 
+If you are familiar with LaTeX, the two main components for installation are the fonts and the logos. Otherwise, install TeX with the beamer package and the Metropolis theme. If you encounter any problems with the Metropolis theme, refer to 
 <https://www.tug.org/texlive//Contents/live/texmf-dist/doc/latex/beamertheme-metropolis/metropolistheme.pdf>
 
 ### Required fonts
@@ -12,30 +11,29 @@ Otherwise, install tex with beamer having metropolis theme. If you have any prob
   1. Calluna
   1. TT Nooks
 
-At this point it is a good idea to verify if Fira Sans is installed first. Compile the file `template.tex` using the command line
+At this stage it is recommended to verify whether Fira Sans is installed. Compile the file `template.tex` from the command line using
 ```
 lualatex templatex.tex 
 or
 xelatex template.tex
 ````
-Open the `template.log` and search for the sentence *'Could not find Fira'*. If you found it, it means your Fira Sans font set is not yet installed.
-Try to install the missing Fira Sans font set using your tex distribution. See: <https://tug.org/FontCatalogue/firasans/>
+Open the `template.log` and look for the message *'Could not find Fira'*. If you found this message, it means your Fira Sans font set is not yet installed.
+Install the missing Fira Sans font set using your TeX distribution. Refer to: <https://tug.org/FontCatalogue/firasans/>
 
-If you decide not to install fonts or even more you compile with `pdflatex`, then it is also ok, although this is what I strongly do not recommend for you to do.
+If you choose not to install the fonts, or you compile with `pdflatex`, this is acceptabe, although this is strongly discouraged.
 At this case the beamer default font set is used, which is not bad at all, but it does not fit with the Corvinus requests.
 
-Unfortunatelly, the rest of the two font sets are not open source, Corvinus University of Budapest bought these fonts to you. 
-Do not hesitate to contact with the graphic designer of the university, she will send you the font sets. 
-Install the fonts on your operating system locally. It is compeletely independent of the TeX distribution. 
-If the operating system is able to see these fonts, for example if an ordinary word processor recognizes these two fonts, 
-then almost surely `lualatex` and `xelatex` will also find these fonts. 😊
+Unfortunatelly, the other two two font sets are not open source; Corvinus University of Budapest has purchased these fonts for you. 
+Do not hesitate to contact the university's graphic designer, who can provide you the font sets.
+Install the fonts locally on your operating system. Font installation is completely independent of the TeX distribution. 
+If the operating system detects these fonts---for example, if they are available to word processors---they will almost certainly be recognized by `lualatex` and `xelatex` as well. 😊
 
-Discuss with the log file again. If the sentence *'Corvinus recommended fonts TT Nooks and Calluna work properly!'* is found, then you have finished the font installation.
+Review the log file again. If you find the message *'Corvinus recommended fonts TT Nooks and Calluna work properly!'*, your font installation has been completed successfully.
 
 ### Logos
-The logos are designed by the graphical designer group of the university. You can download the logo you need from
+The university's graphic design team has created the logos. You can download the required logos from
 <https://www.uni-corvinus.hu/ona/arculati-elemek/>
-Practically you need two logos. 
+Typically, you will need two logos. 
   1. One for the closing frames 
 which is `corvinus_egyszerusitett_logo_cmyk.eps`
   1. An other one for the title page 
@@ -43,17 +41,16 @@ which depends on your department or institute.
 Find the appropriate logos and place them to your working folder. Do not forget to adjust the exact filename at the command 
 `\renewcommand{\myinstlogo}{corvinus_Institute_of_Data_Analytics_and_Information_Systems_cmyk.eps}`, for exmaple.
 
-Compile `template.tex` again with `lualatex` or `xelatex` and compare with `template.pdf` what I uploaded. If you have used `lualatex` or `xelatex` compilers earlier, then no reason to read the rest of this document. Enjoy!
+Compile `template.tex` again using `lualatex` or `xelatex` and compare yout output with the uploaded `template.pdf`. If you have used `lualatex` or `xelatex` compilers earlier, then no reason to read the rest of this document. Enjoy!
 
-If you have never used `lualatex` and `xelatex`, then probably your latex source file is encoded something different than `utf-8`. That soon becomes a serious problem. The point is that the required input encoding of the latex source is `utf-8` when `lualatex` or `xelatex` compiles the source code. Thus, set your text editor to `utf-8` encoding. Using an older file you should convert your tex source to an `utf-8` encoded text file first.
-For example, if you use the good, old fashioned Central European encoding, as an uncomfortable hereditary of an exotic operating system of the last century, your source file is probably encoded `ISO-8859-2`.
-At this case the command
+If you have never used `lualatex` and `xelatex`, your latex source file may not be encoded `utf-8`, which will cause problems. The required input encoding for compilation with `lualatex` or `xelatex` is   `utf-8`. Ensure your text editor is set to `utf-8` encoding. If you are using an older file, convert it to `utf-8` beforre compliling.
+For example, if your source file uses Central European encoding `(ISO-8859-2)`, you can convert it to `utf-8` with the following command:
 ```
 iconv -f ISO-8859-2 -t utf-8 mytexinput.tex
 ```
 converts your input file to `utf-8` format.
-For better understanding please read the first three pages of the document
+For further details, please read the first three pages of
 <http://dante.ctan.org/tex-archive/info/luatex/lualatex-doc/lualatex-doc.pdf>.
-No more, but only the first three pages. Do not use the font selection command `\setsansfont` in your source code. This is what `corvinusmetropolis.cls` does.
+but no more than that. Do not use the font selection command `\setsansfont` in your source code; this is handled by `corvinusmetropolis.cls`.
 
-Have fun, enjoy!
+Enjoy!
