@@ -43,7 +43,7 @@ which depends on your department or institute.
 Find the appropriate logos and place them to your working folder. Do not forget to adjust the exact filename at the command 
 `\renewcommand{\myinstlogo}{corvinus_Institute_of_Data_Analytics_and_Information_Systems_cmyk.eps}`, for exmaple.
 
-Compile `template.tex` again using `lualatex` or `xelatex` and compare your output with the uploaded `template.pdf`. If you have used `lualatex` or `xelatex` compilers earlier, then no reason to read the rest of this document. Enjoy!
+Compile `template.tex` again using `lualatex` or `xelatex` and compare your output with the uploaded `template.pdf`. If you have used `lualatex` or `xelatex` compilers earlier, then no reason to read the rest of this document. Have fun!
 
 If you have never used `lualatex` and `xelatex`, your latex source file may not be encoded `utf-8`, which will cause problems. The required input encoding for compilation with `lualatex` or `xelatex` is   `utf-8`. Ensure your text editor is set to `utf-8` encoding. If you are using an older file, convert it to `utf-8` before compliling.
 For example, if your source file uses Central European encoding `(ISO-8859-2)`, you can convert it to `utf-8` with the following command:
@@ -51,7 +51,9 @@ For example, if your source file uses Central European encoding `(ISO-8859-2)`, 
 iconv -f ISO-8859-2 -t utf-8 mytexinput.tex
 ```
 For further details, please read the first three pages of
-<[http://dante.ctan.org/tex-archive/info/luatex/lualatex-doc/lualatex-doc.pd](https://mirror.szerverem.hu/ctan/obsolete/info/luatex/lualatex-doc/lualatex-doc.pdf)>,
-but no more than that. Do not use the font selection command `\setsansfont` in your source code; this is handled by `corvinusmetropolis.cls`.
+[http://dante.ctan.org/tex-archive/info/luatex/lualatex-doc/lualatex-doc.pd](https://mirror.szerverem.hu/ctan/obsolete/info/luatex/lualatex-doc/lualatex-doc.pdf),
+but no more than that. 
+
+Do not use the font selection command `\setsansfont` in your source code; this is handled by `corvinusmetropolis.cls`.
 
 Enjoy!
