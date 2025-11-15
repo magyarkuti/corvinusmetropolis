@@ -1,7 +1,7 @@
 An extension of the **Metropolis** theme for the **beamer** package in **LaTeX**.
 
 ## For Overleaf users
-<https://www.overleaf.com/read/zvyszxmcxrpp#e70d65>
+Copy the [template](<https://www.overleaf.com/read/zvyszxmcxrpp#e70d65>) project.
 
 ## Install locally the beamer style corvinusmetropolis 
 
@@ -50,9 +50,8 @@ For example, if your source file uses Central European encoding `(ISO-8859-2)`, 
 ```
 iconv -f ISO-8859-2 -t utf-8 mytexinput.tex
 ```
-converts your input file to `utf-8` format.
 For further details, please read the first three pages of
-<http://dante.ctan.org/tex-archive/info/luatex/lualatex-doc/lualatex-doc.pdf>.
+<[http://dante.ctan.org/tex-archive/info/luatex/lualatex-doc/lualatex-doc.pd](https://mirror.szerverem.hu/ctan/obsolete/info/luatex/lualatex-doc/lualatex-doc.pdf)>,
 but no more than that. Do not use the font selection command `\setsansfont` in your source code; this is handled by `corvinusmetropolis.cls`.
 
 Enjoy!
