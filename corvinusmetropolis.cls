@@ -4,7 +4,8 @@
 \ProcessOptions
 \LoadClass{beamer}
 %
-\RequirePackage{orcidlink}
+%\RequirePackage{orcidlink, qrcode, adjustbox, unicode-math}
+\RequirePackage{orcidlink, qrcode, adjustbox}
 \synctex=1
 %
 \ifboolexpr{bool {xetex} or bool {luatex}}{
@@ -28,40 +29,43 @@
 \usetheme[outer/progressbar=foot, titleformat=smallcaps, subsectionpage=progressbar, block=fill]{metropolis}
 \ifboolexpr{bool {xetex} or bool {luatex}}%
     {%
-    \iffontsavailable{TT_Nooks_Regular, Calluna_Italic, Calluna_Regular}
+    \iffontsavailable{SourceSerif4Display-Bold, SourceSans3-It, SourceSans3-Regular}
         {%
-        \setsansfont[BoldFont={TT_Nooks_Regular},ItalicFont={Calluna_Italic}]{Calluna_Regular}%
-        \ClassInfo{corvinusmetropolis}{Corvinus recommended fonts TT Nooks and Calluna work properly even if Overleaf is used!}%
+        \setsansfont[BoldFont={SourceSerif4Display-Bold},ItalicFont={SourceSans3-It}]{SourceSans3-Regular}%
+        \RequirePackage{unicode-math}
+        \setmathfont{KpMath-Light.otf}[Scale=MatchLowercase]
+        \ClassInfo{corvinusmetropolis}{Corvinus recommended fonts SourceSerif and SourceSans3 work properly.}%
         }
         {
-        \ClassInfo{corvinusmetropolis}{Assume it is not Overleaf! Turning to  system fonts.}%
-        \iffontsavailable{TT Nooks, Calluna}
+        \ClassInfo{corvinusmetropolis}{Turning to system fonts.}%
+        \iffontsavailable{TT Nooks, Source Sans 3}
             {%
-            \setsansfont[BoldFont={TT Nooks-Regular},ItalicFont={Calluna-It}]{Calluna-Regular}%
-            \ClassInfo{corvinusmetropolis}{Corvinus recommended fonts TT Nooks and Calluna work properly!}%
+            \setsansfont[BoldFont={Source Serif 4-Regular},ItalicFont={Source Sans 3-It}]{Source Sans 3-Regular}%
+            \ClassInfo{corvinusmetropolis}{System fonts Source Serif 4 and Source Sans 3 work properly!}%
             }
-            {\ClassInfo{corvinusmetropolis}{At least one of Corvinus recommended fonts is missing. \MessageBreak
-            Upload the fonts TT Nooks and Calluna to Overleaf, or install these fonts locally!}
+            {\ClassInfo{corvinusmetropolis}{At least one of Corvinus recommended fonts is missing!}
             }
         }
     }%
     {
-        \ClassInfo{corvinusmetropolis}{You need to compile XeLaTeX os LuaLatex to use the Corvinus recommended fonts TT Nooks and Calluna}
+    \ClassInfo{corvinusmetropolis}{You need to compile XeLaTeX os LuaLatex to use the Corvinus recommended fonts TT Nooks and Calluna}
     }
 %
-\definecolor{CorvinusGold}{HTML}{855C24}
-\definecolor{CorvinusBlue}{HTML}{1B213E}
+%\definecolor{orcidlogocol}{HTML}{0ACD5A}
+\definecolor{CorvinusGold}{HTML}{0ACD5A}
+\definecolor{CorvinusBlue}{HTML}{002300}
 \setbeamercolor{normal text}{fg=CorvinusBlue}
 \setbeamercolor{alerted text}{fg=CorvinusGold, bg=CorvinusBlue}
 \colorlet{VarCorvinusGold}{CorvinusGold}
 \colorlet{VarCorvinusBlue}{CorvinusBlue}
-% These two color variables defined for the user.
+% These two color variables are defined for the user.
+\colorlet{orcidlogocol}{CorvinusGold}
 
 \setbeamertemplate{blocks}[rounded]
 %
 \newcommand{\thankyoupage}[1]{
     \frametitle{#1}
-    \includegraphics[width=.5\textwidth]{corvinus_egyszerusitett_logo_cmyk.eps}
+    \includegraphics[width=.5\textwidth]{\myinstlogo}
     \hfill{\putemail}
 }
 \newcommand{\closingframes}[1]{
@@ -76,7 +80,7 @@
     \tableofcontents}
     \metroset{outer/numbering=counter, outer/progressbar=foot, block=transparent}%
 }
-\newcommand{\myinstlogo}{corvinus_Institute_of_Economics_logo_cmyk.eps}
+\newcommand{\myinstlogo}{corvinus_University_logo_black.eps}
 
 \endinput
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

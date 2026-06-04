@@ -1,4 +1,6 @@
 \documentclass[aspectratio=169,notheorems]{corvinusmetropolis}
+%\usepackage{qrcode,adjustbox} % iff qrcode needed, otherwise comment this line!
+%\usepackage{polyglossia}\setdefaultlanguage{english} %%-metropolis never hyphenates.
 
 \newtheorem{theorem}{Theorem}
 %\newtheorem{proposition}[theorem]{Proposition}
@@ -7,14 +9,11 @@
 \newtheorem{definition}[theorem]{Definition}
 %\newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{example}[theorem]{Example}
-
-\renewcommand{\myinstlogo}{corvinus_Department_of_Mathematics_logo_cmyk.eps}
-%\renewcommand{\myinstlogo}{corvinus_Institute_of_Data_Analytics_and_Information_Systems_cmyk.eps}
-%\renewcommand{\myinstlogo}{corvinus_Adatelemzes_es_Informatika_Intezet_cmyk.eps}
-%\renewcommand{\myinstlogo}{corvinus_Institute_of_Economics_logo_cmyk.eps}
+% Comment the next row, if you do not care on department level logo. The university logo is used.
+%\renewcommand{\myinstlogo}{corvinus_Department_of_Mathematics_logo_black.eps}
 
 \title{Quadratic forms}
-\subtitle{The Gauss--Jordan elimination completes the square}
+\subtitle{Gauss--Jordan elimination completes the square}
 \author[Magyarkuti]{Gyula~Magyarkuti\,\orcidlink{0000-0003-4444-0481}}%The name only, if the author does not prefer orcidlink.
 \email{magyarkuti@uni-corvinus.hu}
 
@@ -22,12 +21,18 @@
   {
   Department of Mathematics\\
   Corvinus University of Budapest\\
-  Email: \putemail\\
-  Download from:
-  \url{http://web.uni-corvinus.hu/magyarkuti/\jobname .pdf}
+  Sóház 208/B
+  
+  \begin{minipage}[b]{0.8\linewidth}
+  email: \putemail\\
+  download from: \url{https://magyarkuti.github.io/corvinusmetropolis/}
+  \end{minipage}
+  \hfill{\adjustbox{valign=B}{\qrcode[hyperlink]{https://magyarkuti.github.io/corvinusmetropolis/}}}%% iff qrcode needed, otherwise comment this line!
   }
-\date[Week 6. (Fall) Linear Algebra]{\today}
-\titlegraphic{\hfill{\includegraphics[width=.2\textwidth]{\myinstlogo}}}
+%\date[Week 6. (Fall) Linear Algebra]{\today}
+\titlegraphic{\hfill{\includegraphics[width=.2\linewidth]{\myinstlogo}}}
+%corvinus_Department_of_Mathematics_logo_black.eps
+
 \subject{Linear Algebra}
 \keywords{Gauss--Jordan elimination, completing the square}
 
