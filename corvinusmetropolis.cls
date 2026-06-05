@@ -38,9 +38,11 @@
         }
         {
         \ClassInfo{corvinusmetropolis}{Turning to system fonts.}%
-        \iffontsavailable{TT Nooks, Source Sans 3}
+        \iffontsavailable{Source Serif 4, Source Sans 3}
             {%
             \setsansfont[BoldFont={Source Serif 4-Regular},ItalicFont={Source Sans 3-It}]{Source Sans 3-Regular}%
+            \RequirePackage{unicode-math}
+            \setmathfont{KpMath-Light.otf}[Scale=MatchLowercase]
             \ClassInfo{corvinusmetropolis}{System fonts Source Serif 4 and Source Sans 3 work properly!}%
             }
             {\ClassInfo{corvinusmetropolis}{At least one of Corvinus recommended fonts is missing!}
@@ -51,7 +53,6 @@
     \ClassInfo{corvinusmetropolis}{You need to compile XeLaTeX os LuaLatex to use the Corvinus recommended fonts TT Nooks and Calluna}
     }
 %
-%\definecolor{orcidlogocol}{HTML}{0ACD5A}
 \definecolor{CorvinusGold}{HTML}{0ACD5A}
 \definecolor{CorvinusBlue}{HTML}{002300}
 \setbeamercolor{normal text}{fg=CorvinusBlue}
