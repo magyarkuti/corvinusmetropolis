@@ -31,26 +31,30 @@
     {%
     \iffontsavailable{SourceSerif4Display-Bold, SourceSans3-It, SourceSans3-Regular}
         {%
-        \setsansfont[BoldFont={SourceSerif4Display-Bold},ItalicFont={SourceSans3-It}]{SourceSans3-Regular}%
+        \setsansfont[
+                    BoldFont={SourceSerif4Display-Bold},
+                    ItalicFont={SourceSans3-It}
+                    ]
+                    {SourceSans3-Regular}%
         \RequirePackage{unicode-math}
         \setmathfont{KpMath-Light.otf}[Scale=MatchLowercase]
-        \ClassInfo{corvinusmetropolis}{Corvinus recommended fonts SourceSerif and SourceSans3 work properly.}%
+        \ClassInfo{corvinusmetropolis}{Corvinus recommended fonts SourceSerif4Display and SourceSans3 work properly}%
         }
         {
-        \ClassInfo{corvinusmetropolis}{Turning to system fonts.}%
+        \ClassInfo{corvinusmetropolis}{Turning to other fonts}%
         \iffontsavailable{Source Serif 4, Source Sans 3}
             {%
             \setsansfont[BoldFont={Source Serif 4-Regular},ItalicFont={Source Sans 3-It}]{Source Sans 3-Regular}%
             \RequirePackage{unicode-math}
             \setmathfont{KpMath-Light.otf}[Scale=MatchLowercase]
-            \ClassInfo{corvinusmetropolis}{System fonts Source Serif 4 and Source Sans 3 work properly!}%
+            \ClassInfo{corvinusmetropolis}{Fonts Source Serif 4 and Source Sans 3 work properly without optical size Display}%
             }
-            {\ClassInfo{corvinusmetropolis}{At least one of Corvinus recommended fonts is missing!}
+            {\ClassInfo{corvinusmetropolis}{At least one of Corvinus recommended fonts is missing}
             }
         }
     }%
     {
-    \ClassInfo{corvinusmetropolis}{You need to compile XeLaTeX os LuaLatex to use the Corvinus recommended fonts TT Nooks and Calluna}
+    \ClassInfo{corvinusmetropolis}{You need to compile XeLaTeX os LuaLatex to use the Corvinus recommended fonts}
     }
 %
 \definecolor{CorvinusGold}{HTML}{0ACD5A}
@@ -89,17 +93,6 @@ For Overleaf users!
 Upload the Corvinus recommended fonts to Overleaf and Overleaf manages the font installation.
 The required font files are as follows:
 
-Calluna_Bold_Italic.otf
-Calluna_Bold.otf
-Calluna_Heavy.otf
-Calluna_Italic.otf
-Calluna_Light.otf
-Calluna_Regular.otf
-Calluna_Semi_Bold_Italic.otf
-Calluna_Semi_Bold.otf
-TT_Nooks_Bold.otf
-TT_Nooks_Heavy.otf
-TT_Nooks_Light.otf
-TT_Nooks_Regular.otf
-
-If you need these files send an email to me, I share an Overleaf link where you can find corvinusmetropolis installed.
+SourceSerif4Display-Bold.otf
+SourceSans3-It.otf
+SourceSans3-Regular.otf
