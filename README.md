@@ -15,9 +15,9 @@ If you are familiar with LaTeX, the two main components for installation are the
 1. [Source Sans](https://github.com/adobe-fonts/source-sans/)
 2. [Source Serif](https://github.com/adobe-fonts/source-serif)
 
-The best approach is to install these fonts locally. However, placing the four OTF files in your working directory is also sufficient.
+The best approach is to install these fonts locally. However, placing the four `otf` files in your working directory is also sufficient.
 
-Compile the file `template.tex` from the command line using:
+Compile the file `template.tex`from the command line using:
 
 ```
 lualatex template.tex
@@ -31,7 +31,8 @@ xelatex template.tex
 
 ### Logos
 
-If you do not require logos, skip this section. The main university logo will be used by default. Otherwise, use the logos created by the university's graphic design team. You can download the required logos from:
+If you do not require logos, skip this section. The main university logo will be used by default. 
+Otherwise, use the logos created by the university's graphic design team. You can download the required logos from:
 
 <https://www.uni-corvinus.hu/ona/arculati-elemek/>
 
