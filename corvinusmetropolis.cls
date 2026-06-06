@@ -33,7 +33,8 @@
         {%
         \setsansfont[
                     BoldFont={SourceSerif4Display-Bold},
-                    ItalicFont={SourceSans3-It}
+                    ItalicFont={SourceSans3-It},
+                    BoldItalicFont={SourceSans3-BoldIt}
                     ]
                     {SourceSans3-Regular}%
         \RequirePackage{unicode-math}
@@ -44,7 +45,12 @@
         \ClassInfo{corvinusmetropolis}{Turning to other fonts}%
         \iffontsavailable{Source Serif 4, Source Sans 3}
             {%
-            \setsansfont[BoldFont={Source Serif 4-Regular},ItalicFont={Source Sans 3-It}]{Source Sans 3-Regular}%
+            \setsansfont[
+                        BoldFont={Source Serif 4-Regular},
+                        ItalicFont={Source Sans 3-It},
+                        BoldItalicFont={Source Sans 3-BoldIt},
+                        ]
+                        {Source Sans 3-Regular}%
             \RequirePackage{unicode-math}
             \setmathfont{KpMath-Light.otf}[Scale=MatchLowercase]
             \ClassInfo{corvinusmetropolis}{Fonts Source Serif 4 and Source Sans 3 work properly without optical size Display}%

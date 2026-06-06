@@ -3,7 +3,7 @@
 %\usepackage{polyglossia}\setdefaultlanguage{english} %%-metropolis never hyphenates.
 
 \newtheorem{theorem}{Theorem}
-%\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{proposition}[theorem]{Proposition}
 %\newtheorem{lemma}[theorem]{Lemma}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
@@ -14,7 +14,7 @@
 
 \title{Quadratic forms}
 \subtitle{Gauss--Jordan elimination completes the square}
-\author[Magyarkuti]{Gyula~Magyarkuti\,\orcidlink{0000-0003-4444-0481}}%The name only, if the author does not prefer orcidlink.
+\author[Magyarkuti]{Gyula~Magyarkuti\orcidlink{0000-0003-4444-0481}}%The name only, if the author does not prefer orcidlink.
 \email{magyarkuti@uni-corvinus.hu}
 
 \institute[Corvinus University]
@@ -37,9 +37,9 @@
 \keywords{Gauss--Jordan elimination, completing the square}
 
 \newcommand{\lin}{\operatorname{lin}}
-
 \begin{document}
 \openingframes{Outline}
+%\metroset{block=fill}
 \section{Definition of quadratic forms}
 \frame{
 A quadratic form is a special multi-variable function.
@@ -51,7 +51,7 @@ A quadratic form is a special multi-variable function.
     Q\left( x_{1},x_2,\cdots,x_n \right)=
     \sum_{k=1}^n\sum_{j=1}^na_{k,j}x_kx_j
     \]
-    is called $n$ variables quadratic function.
+    is called $n$-variable quadratic function.
 \end{definition}
 If $n=1$ then $Q(x_1)=ax_1^2$.\\
 If $n=2$ then
@@ -78,6 +78,23 @@ Compute the case when $n=3$.
         Similarly,
         the quadratic form determined by $\alpha A$ is the same as the form determined by $A$ multiplied by $\alpha$.
     \end{theorem}
+\end{frame}
+\begin{frame}
+    \frametitle{Definiteness}
+    Our goal is to classify a quadratic form with respect to its range!
+    \begin{definition}
+        Let $Q:\mathbb{R}^n\to\mathbb{R}$ be a non-zero quadratic form. It is called
+        \begin{description}
+            \item[\emph{positive definite,}] if $Q\left( x \right)>0$ for every $x\in\mathbb{R}^n,x\neq 0$;
+            \item[\emph{positive semidefinite,}] if $ Q\left( x \right)\geq 0$ for every $x\in\mathbb{R}^n$,
+                but there exists a $z\in\mathbb{R}^n, z\neq 0$ such that $Q\left( z \right)=0$;
+            \item[\emph{negative definite,}] if $ Q\left( x \right)<0$ for every $x\in\mathbb{R}^n,x\neq 0;$
+            \item[\emph{negative semidefinite,}] if $ Q\left( x \right)\leq 0$ for every $x\in\mathbb{R}^n$,
+                but there exists a $z\in\mathbb{R}^n, z\neq 0$ such that $Q\left( z \right)=0$;
+            \item[\emph{indefinite,}] if there exist two vectors $x,y\in\mathbb{R}^n$ for which
+                $Q\left( x \right)>0$ but $Q\left( y \right)<0$.
+        \end{description}
+    \end{definition}
 \end{frame}
 \section{Dyadic decomposition}
 \subsection{Dyad and completing the square}
@@ -109,7 +126,7 @@ Compute the case when $n=3$.
         here $Q$ is the quadratic form determined by the dyad $A$.
     \end{theorem}
 \end{frame}
-\subsection{High school method for a few variable only}
+\subsection{High school method for a few variables only}
 \begin{frame}
     \frametitle{Decomposition}
     \metroset{block=fill}
@@ -128,51 +145,73 @@ Compute the case when $n=3$.
 \end{frame}
 \subsection{Professional method}
 \begin{frame}
-    \frametitle{Dyadic decomposition using Gauss--Jordan elimination}
-    Every $n$-variable quadratic form can be decreased by a multiply of a dyad such that
-    the remainder quadratic form has one variable less:
-    \metroset{block=fill}
-    \begin{theorem}
-        Consider a symmetric matrix $A\in\mathbb{R}^{n\times n}$.
-        Assume, that $a_{1,1}\neq 0$ and denote $d=\frac{1}{a_{1,1}}a_1$,
-        where $a_1$ is the first column of matrix $A$.
-        Then 
-        \[
-            R=A-a_{1,1}d\cdot d^T
-        \]
-        is a symmetric matrix, where the first row (and column) is the zero vector.
-    \end{theorem}
-    \metroset{block=transparent}
-    \begin{proof}
-        The sum of symmetric matrices is a symmetric matrix.
-        If $\delta_k$ denotes the $k$-th coordinate of $d$, then
-        \(
-            r_{k,j}=
-            a_{k,j}-a_{1,1}\delta_{k}\delta_j.
-        \)
-        If $k=1$ we obtain $r_{1,j}=a_{1,j}-a_{1,1}\cdot 1\cdot\frac{a_{1,j}}{a_{1,1}}=0$.
-    \end{proof}
+\frametitle{Dyadic decomposition using Gauss--Jordan elimination}
+Every \(n\)-variable quadratic form can be reduced by subtracting a multiple of a dyad such that the resulting quadratic form has one fewer variable:
+\metroset{block=fill}
+\begin{theorem}
+Consider a symmetric matrix \(A \in \mathbb{R}^{n \times n}\).
+Assume that \(a_{t,t} \neq 0\) and denote \(d = \frac{1}{a_{t,t}} a_t\),
+where \(a_t\) is the \(t\)-th column of the matrix \(A\).
+Then
+\[
+R = A - a_{t,t} d \cdot d^T
+\]
+is a symmetric matrix whose $t$-th row (and column) is zero vector.
+\end{theorem}
+
+\metroset{block=transparent}
+\begin{proof}
+The sum of symmetric matrices is symmetric.
+If \(\delta_k\) denotes the \(k\)-th coordinate of \(d\), then
+\(
+a_t^T - a_{t,t} \delta_t d^T
+\)
+is the \(t\)-th row of matrix \(R\).
+It is the zero row because \(\delta_t = 1\) and \(a_{t,t} d = a_t\).
+By the symmetry of \(R\), the \(t\)-th column is also the zero column.
+\end{proof}
 \end{frame}
-\begin{frame}
-    The $k,j$ term of the matrix of the remainder quadratic form is
-    \metroset{block=fill}
-    \begin{block}{}
-    \[
-        r_{k,j}=
-        a_{k,j}-a_{1,1}\delta_k\delta_j=
-        a_{k,j}-a_{1,1}\frac{a_{k,1}}{a_{1,1}}\delta_j=
-        a_{k,j}-a_{k,1}\delta_j.
-    \]
-    \end{block}
-    If $k>1$ and $j>1$, then the above formula just computes
-    the new coordinates of the $j$-th column after the first column has entered to the base at the first position.
-    Thus we proved the following theorem.
-    \begin{theorem}
-        Let $A\in\mathbb{R}^{n\times n}$ be a symmetric matrix and assume that $a_{1,1}\neq 0$.
-        After separating the first complete square, as in the theorem above, the matrix of the remainder quadratic form
-        is the bottom right $n-1\times n-1$ matrix of the transformation table, when $a_{1,1}$ is the pivot term.
-    \end{theorem}
-\end{frame}
+\frame{
+Understanding the second step of the algorithm guaranteeing dyadic decomposition 
+relies on the observation that the matrix of the residual quadratic form,
+namely \[ R = A - a_{t,t} d \cdot d^T, \] 
+can be calculated far more efficiently than by the original formula.
+It was already seen that every element in the \( t \)-th row is zero.
+Now let us write down the \( k \)-th row of matrix \( R \) for \( k \neq t \).
+It is important to note that the row \( d^T \) is the auxiliary row of the Gauss--Jordan elimination
+when choosing the pivot element \( a_{t,t} \).
+Consider the \( k \)-th row of the dyad \( d \cdot d^T \) as \( \delta_k d^T \).
+Then it is clear that the \( k \)-th row of matrix \( R \) is the difference of the \( k \)-th row of matrix \( A \)
+and the row \( a_{t,k} d^T \) because
+\[
+    a_{t,t} \delta_k d^T = a_{t,t} \frac{a_{k,t}}{a_{t,t}} d^T.
+\]
+
+Recognize that this is exactly the computational rule of the elimination algorithm in the case when
+the diagonal \( t \)-th element is the pivot and we compute the entries of the rows not containing the pivot element.
+}
+\frame{
+This means that the operation 
+\[ A - a_{t,t} d \cdot d^T \] 
+can be calculated by Gauss--Jordan elimination
+instead of dyadic multiplication and matrix subtraction.
+
+We have thus proven the following proposition.
+
+\begin{proposition}
+Let \( A \in \mathbb{R}^{n \times n} \) be a symmetric matrix such that \( a_{t,t} \neq 0 \).
+Let \( R \) be the matrix of the residual quadratic form after removing the first dyad,
+that is,
+\[
+R = A - a_{t,t} d \cdot d^T,
+\]
+where \( d \) is the \( t \)-th column of matrix \( A \) multiplied by the reciprocal of \( a_{t,t} \).%
+\footnote{That is, \( d^T \) is the auxiliary row of the elimination.}
+We know that the \( t \)-th column and row of matrix \( R \) contain only zeros.
+The rest of matrix \( R \) can be obtained by Gauss--Jordan elimination on matrix \( A \)
+with the pivot element \( a_{t,t} \).
+\end{proposition}
+}
 \section{Problems}
 \begin{frame}
     \frametitle{Problems}
@@ -185,33 +224,76 @@ Compute the case when $n=3$.
             \item
             $Q\left( z_1,z_2,z_3 \right)=2z_1^2+\frac{3}{2}z_3^2+2z_1z_2-4z_1z_3+2z_2z_3$,
             \item
+            $Q\left( x_1,x_2,x_3 \right)=3x_2^2+2x_1x_2+2x_1x_3+6x_2x_3$,
+            \item
             $Q\left( x_1,x_2,x_3,x_4 \right)=2x_1^2+2x_2^2+2x_3^2+2x_4^2-4x_1x_2+2x_1x_4+2x_2x_3-4x_3x_4$
+            \item
+            $Q\left( x_1,x_2,x_3\right)=2x_1x_2+2x_2x_3$
         \end{enumerate}
     \end{block}
 \end{frame}
+\frame{
+Let $Q$ be a quadratic form defined as
+\[
+    Q\left( x_1,x_2,x_3,x_4 \right)=
+    \left( x_1+x_2+2x_3+x_4 \right)^2+\left( x_1+x_4 \right)^2+\left( x_2+2x_3 \right)^2
+\]
+for real numbers $x_1,x_2,x_3,x_4$.
+\begin{enumerate}
+    \item 
+        Characterize the definiteness of $Q$.
+    \item 
+        Write the matrix of the quadratic form above.
+    \item 
+        Compute the rank of the matrix above.
+    \item 
+        Write the matrix as a linear combinations of $r$ dyads, where $r$ is the rank above.
+\end{enumerate}
+}
 \section{Definiteness of a quadratic form}
 \begin{frame}
     \frametitle{Definiteness}
-    Classify a quadratic form with respect to to the range!
+    Classify a quadratic form with respect to its range!
     \begin{definition}
-        Let $Q:\mathbb{R}^n\to\mathbb{R}$ be a nonzero quadratic form. It is called
+        Let $Q:\mathbb{R}^n\to\mathbb{R}$ be a non-zero quadratic form. It is called
         \begin{description}
-            \item[positive definite,] if $Q\left( x \right)>0$ for every $x\in\mathbb{R}^n,x\neq 0$;
-            \item[positive semidefinite,] if $ Q\left( x \right)\geq 0$ for every $x\in\mathbb{R}^n$,
+            \item[\emph{positive definite,}] if $Q\left( x \right)>0$ for every $x\in\mathbb{R}^n,x\neq 0$;
+        \item[\emph{positive semidefinite,}] if $ Q\left( x \right)\geq 0$ for every $x\in\mathbb{R}^n$,
                 but there exists a $z\in\mathbb{R}^n, z\neq 0$ such that $Q\left( z \right)=0$;
-            \item[negative definite,] if $ Q\left( x \right)<0$ for every $x\in\mathbb{R}^n,x\neq 0;$
-            \item[negative semidefinite,] if $ Q\left( x \right)\leq 0$ for every $x\in\mathbb{R}^n$,
+            \item[\emph{negative definite,}] if $ Q\left( x \right)<0$ for every $x\in\mathbb{R}^n,x\neq 0;$
+            \item[\emph{negative semidefinite,}] if $ Q\left( x \right)\leq 0$ for every $x\in\mathbb{R}^n$,
                 but there exists a $z\in\mathbb{R}^n, z\neq 0$ such that $Q\left( z \right)=0$;
-            \item[indefinite,] if there exist two vectors $x,y\in\mathbb{R}^n$ for which
+            \item[\emph{indefinite,}] if there exist two vectors $x,y\in\mathbb{R}^n$ for which
                 $Q\left( x \right)>0$ but $Q\left( y \right)<0$.
         \end{description}
     \end{definition}
 \end{frame}
+\begin{frame}
+    \begin{theorem}
+    Consider a square matrix $A$ having rank $r$. 
+    Assume that 
+    \[A=B\cdot C\] 
+    where the number of the columns of $B$ (and the number of the rows of $C$) is the same as the rank $r$.
+    
+    Then the row system of $C$ is a linearly independent system.
+    \end{theorem}
+    \begin{proof}
+        Every row of $A$ is a linear combination of the rows of $C$.
+        It means that the row system of $C$ is a spanning set of the row space of $A$.
+        But the number of the rows of $C$ is the same as the dimension of the row space of $A$, 
+        thus it is a minimal spanning set.
+        We proved, that the rows of $C$ form an independent set.
+    \end{proof}
+    We also proved that the 
+    the row system of $C$ is a base of the row space of $A$ and similarly 
+    the column system of $B$ forms a base of the column space of $A$.
+\end{frame}
+
 \subsection{Summary}
 \begin{frame}
     \frametitle{Definiteness after completing the square}
     It is not hard to decide the definiteness of a quadratic form if it is given with its dyad decomposition.
-    Let $Q$ be an $n$-variable none-zero quadratic form.\\
+    Let $Q$ be an $n$-variable non-zero quadratic form.\\
     If the dyad decomposition 
     \begin{itemize}
         \item includes positive and negative pivot terms then $Q$ is an \alert{\emph{indefinite}} quadratic form.
@@ -233,5 +315,70 @@ Compute the case when $n=3$.
         \item all pivot terms are negative numbers then $Q$ is \alert{\emph{negative semidefinite}}.
     \end{itemize}
 \end{frame}
+\frame{\frametitle{Proof.}
+    Let us start with the case when, 
+    in the last tableau of the elimination algorithm, 
+    all elements on the diagonal are zero, 
+    but there exists at least one nonzero element.
+
+    Then the quadratic form \(Q\) can be decomposed as \(Q = Q_1 + Q_R\), 
+    where \(Q_R\) is indefinite.
+
+    For simplicity, 
+    assume that \(x_1, \dots, x_k\) are the separated variables, 
+    and \(Q_R\) depends only on the remaining variables.
+    Accordingly, the quadratic form \(Q_1\) is a linear combination of at most \(k\) perfect squares.
+}
+\frame{
+    Consider the homogeneous linear system whose coefficient matrix is formed by stacking the auxiliary 
+    rows of the elimination algorithm in the order given by the elimination tableaux.
+    It is clear that the last row contains the variable \(x_k\).
+
+    Each higher row contains at least one more variable than the row below it.
+    Thus, for arbitrary values of \(x_{k+1}, \dots, x_n\), 
+    there exist values for \(x_1, \dots, x_k\) such that the variables form a solution to the linear system, hence
+    \(
+    Q_1(x_1, \dots, x_n) = 0.
+    \)
+
+    This shows that not only \(Q_R\) but also \(Q\) is indefinite.
+    }\frame{
+    Assume, now that \(Q\) is a linear combination of \(r\) perfect squares, 
+    where \(r\) is the rank of the matrix representing the original quadratic form.
+
+    Consider the case when there are both positive and negative pivot elements.
+
+    Denote by \(Dx = b_+\) and \(Dx = b_-\) the inhomogeneous systems where the rows of \(D\) 
+    are the auxiliary rows of the elimination algorithm, 
+    and the vector \(b_+\) (respectively \(b_-\)) contains $1$ or $0$ 
+    depending on whether the pivot element corresponding to the row is positive or negative.
+
+    Similarly, the elements of \(b_-\) are $1$ or zero, 
+    depending on whether the pivot element of the corresponding row is negative or not.
+
+    Here, \(x = (x_1, \dots, x_n)\) are the variables of the quadratic form.
+
+    Since the row system of \(D\) is linearly independent system,
+    therefore, both systems \(Dx = b_+\) and \(Dx = b_-\) have solutions, implying that \(Q\) is indeed indefinite.
+}\frame{
+Finally, consider the case when all pivot elements are positive (or all are negative).
+
+It is clear that
+\[
+Q(x_1, \dots, x_n) \geq 0 \quad (\text{or } \leq 0).
+\]
+If \(r = n\), then with the above notations, \(D\) is a regular matrix.
+Hence,
+\[
+Q(x) = 0 \quad \text{if and only if} \quad Dx=0, \quad \text{which holds only if} \quad x=0.
+\]
+This proves the statement about positive (or negative) definite quadratic forms.
+
+If \(r < n\), then the dimension of the nullspace is \(n-r > 0\), so there exists a nonzero \(x\) such that \(Q(x) = 0\).
+This proves the statement about positive (or negative) semi definite quadratic forms.
+}
 \closingframes{Thank you for your attention!}
+\begin{frame}
+\end{frame}
 \end{document}
+
